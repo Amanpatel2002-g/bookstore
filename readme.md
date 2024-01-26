@@ -49,9 +49,17 @@ source venv/bin/activate
 Clone the Bookstore Management System API repository from GitHub:
 
 ```bash
-git clone https://github.com/your-repository-url.git
+git clone https://github.com/Amanpatel2002-g/bookstore
 ```
 
+#### Install Dependencies
+
+Install the required Python packages using pip:
+
+```bash
+# Example command for installing dependencies
+pip install -r requirements.txt
+```
 
 #### Run the API
 
@@ -71,7 +79,7 @@ The Bookstore Management System API uses a well-defined database schema to store
 - **title (string)**
 - **author (string)**
 - **isbn (string, unique)**
-- **price (integer)**
+- **price (float)**
 - **quantity (integer)**
 
 The `books` table holds the core information about each book, including title, author, ISBN, price, and quantity.
@@ -80,7 +88,7 @@ The `books` table holds the core information about each book, including title, a
 
 #### 4.1 Adding a New Book
 
-**Endpoint:** POST /api/books
+**Endpoint:** POST /bookStore/books/
 
 **Request:**
 ```json
@@ -96,7 +104,7 @@ The `books` table holds the core information about each book, including title, a
 
 #### 4.2 Retrieving All Books
 
-**Endpoint:** GET /api/books
+**Endpoint:** GET /bookStore/books/
 
 **Request Header:**
 ```
@@ -107,6 +115,7 @@ Authorization: Token {your_token_here}
 ```json
 [
   {
+    "id": 1,
     "title": "Example Book",
     "author": "John Doe",
     "isbn": "1234567890",
@@ -119,7 +128,7 @@ Authorization: Token {your_token_here}
 
 #### 4.3 Retrieving a Specific Book by ISBN
 
-**Endpoint:** GET /api/books/{isbn}
+**Endpoint:** GET /bookStore/books/{isbn}
 
 **Request Header:**
 ```
@@ -129,6 +138,7 @@ Authorization: Token {your_token_here}
 **Response:**
 ```json
 {
+  "id": 1,
   "title": "Example Book",
   "author": "John Doe",
   "isbn": "1234567890",
@@ -139,7 +149,7 @@ Authorization: Token {your_token_here}
 
 #### 4.4 Updating Book Details
 
-**Endpoint:** PUT /api/books/{isbn}
+**Endpoint:** PATCH /bookStore/books/{isbn}
 
 **Request:**
 ```json
@@ -158,7 +168,7 @@ Authorization: Token {your_token_here}
 
 #### 4.5 Deleting a Book
 
-**Endpoint:** DELETE /api/books/{isbn}
+**Endpoint:** DELETE /bookStore/books/{isbn}
 
 **Request Header:**
 ```
@@ -171,9 +181,7 @@ Authorization: Token {your_token_here}
 
 The API implements basic authentication to restrict access to certain endpoints. Users are required to include valid credentials when accessing protected resources.
 
-To authenticate, register yourself at [http://127.0.0.1:8000/account/register/](
-
-http://127.0.0.1:8000/account/register/), obtain a token, and include it in the `Authorization` header when making API requests.
+To authenticate, register yourself at [http://127.0.0.1:8000/account/register/](http://127.0.0.1:8000/account/register/), obtain a token, and include it in the `Authorization` header when making API requests.
 
 ## Testing
 
