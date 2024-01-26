@@ -107,7 +107,6 @@ Authorization: Token {your_token_here}
 ```json
 [
   {
-    "id": 1,
     "title": "Example Book",
     "author": "John Doe",
     "isbn": "1234567890",
@@ -130,7 +129,6 @@ Authorization: Token {your_token_here}
 **Response:**
 ```json
 {
-  "id": 1,
   "title": "Example Book",
   "author": "John Doe",
   "isbn": "1234567890",
