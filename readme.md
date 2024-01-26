@@ -7,7 +7,7 @@ Welcome to the Bookstore Management System API documentation! This API is design
 ## Key Features
 
 - **Book Management:** Easily add, retrieve, update, and delete book details such as title, author, ISBN, price, and quantity.
-- **Authentication:** Secure your API with basic authentication
+- **Authentication:** Secure your API with basic authentication.
 - **Database Integration:** A well-designed database schema ensures efficient storage and retrieval of book information.
 - **Testing:** Comprehensive unit tests are provided to ensure the reliability of the API endpoints.
 
@@ -52,14 +52,6 @@ Clone the Bookstore Management System API repository from GitHub:
 git clone https://github.com/your-repository-url.git
 ```
 
-#### Install Dependencies
-
-Install the required Python packages using pip:
-
-```bash
-# Example command for installing dependencies
-pip install -r requirements.txt
-```
 
 #### Run the API
 
@@ -75,10 +67,11 @@ python manage.py runserver
 The Bookstore Management System API uses a well-defined database schema to store information about books. Below is the schema:
 
 #### Table: books
+
 - **title (string)**
 - **author (string)**
-- **isbn (string, unique,primarykey)**
-- **price (float)**
+- **isbn (string, unique)**
+- **price (integer)**
 - **quantity (integer)**
 
 The `books` table holds the core information about each book, including title, author, ISBN, price, and quantity.
@@ -105,6 +98,11 @@ The `books` table holds the core information about each book, including title, a
 
 **Endpoint:** GET /api/books
 
+**Request Header:**
+```
+Authorization: Token {your_token_here}
+```
+
 **Response:**
 ```json
 [
@@ -122,6 +120,11 @@ The `books` table holds the core information about each book, including title, a
 #### 4.3 Retrieving a Specific Book by ISBN
 
 **Endpoint:** GET /api/books/{isbn}
+
+**Request Header:**
+```
+Authorization: Token {your_token_here}
+```
 
 **Response:**
 ```json
@@ -147,17 +150,30 @@ The `books` table holds the core information about each book, including title, a
   "quantity": 60
 }
 ```
+**Request Header:**
+```
+Authorization: Token {your_token_here}
+```
 **Response:** 200 OK
 
 #### 4.5 Deleting a Book
 
 **Endpoint:** DELETE /api/books/{isbn}
 
+**Request Header:**
+```
+Authorization: Token {your_token_here}
+```
+
 **Response:** 204 No Content
 
 ## Authentication
 
-The API implements basic authentication to restrict access to certain endpoints. Users are required to include valid credentials when accessing protected resources. Optionally, JWT token authentication can be used for enhanced security. Refer to the Authentication section for details on obtaining and using the token.
+The API implements basic authentication to restrict access to certain endpoints. Users are required to include valid credentials when accessing protected resources.
+
+To authenticate, register yourself at [http://127.0.0.1:8000/account/register/](
+
+http://127.0.0.1:8000/account/register/), obtain a token, and include it in the `Authorization` header when making API requests.
 
 ## Testing
 
@@ -167,6 +183,10 @@ To ensure the reliability of the API, comprehensive unit tests have been provide
 # Example command for running tests
 python manage.py test
 ```
+
+### Serverless Application Model (SAM)
+
+This API is developed using the Serverless Application Model (SAM), making it easy to deploy and manage on cloud platforms. Check the AWS SAM documentation for more information on deploying serverless applications.
 
 ## Conclusion
 
