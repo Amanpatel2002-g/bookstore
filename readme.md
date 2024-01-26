@@ -183,18 +183,6 @@ The API implements basic authentication to restrict access to certain endpoints.
 
 To authenticate, register yourself at [http://127.0.0.1:8000/account/register/](http://127.0.0.1:8000/account/register/), obtain a token, and include it in the `Authorization` header when making API requests.
 
-## Testing
-
-To ensure the reliability of the API, comprehensive unit tests have been provided. Run the tests using the following command:
-
-```bash
-# Example command for running tests
-python manage.py test
-```
-
-### Serverless Application Model (SAM)
-
-This API is developed using the Serverless Application Model (SAM), making it easy to deploy and manage on cloud platforms. Check the AWS SAM documentation for more information on deploying serverless applications.
 
 ## Conclusion
 
