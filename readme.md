@@ -52,14 +52,6 @@ Clone the Bookstore Management System API repository from GitHub:
 git clone https://github.com/Amanpatel2002-g/bookstore
 ```
 
-#### Install Dependencies
-
-Install the required Python packages using pip:
-
-```bash
-# Example command for installing dependencies
-pip install -r requirements.txt
-```
 
 #### Run the API
 
