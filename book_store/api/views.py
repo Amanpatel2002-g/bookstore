@@ -1,8 +1,7 @@
 from book_store.models import BookStore
-from rest_framework.response import Response
 from rest_framework import generics
 from book_store.api.serializers import BookStoreSerializer
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 class BookList(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = BookStore.objects.all()

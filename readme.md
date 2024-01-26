@@ -182,7 +182,36 @@ Authorization: Token {your_token_here}
 The API implements basic authentication to restrict access to certain endpoints. Users are required to include valid credentials when accessing protected resources.
 
 To authenticate, register yourself at [http://127.0.0.1:8000/account/register/](http://127.0.0.1:8000/account/register/), obtain a token, and include it in the `Authorization` header when making API requests.
+## Testing
 
+To ensure the reliability of the API, comprehensive unit tests have been provided. Before running the tests, ensure that you turn off authentication. Follow the steps below:
+
+1. Open the file `C:\Users\apoff\Desktop\farmwise_python\BookStore\book_store\api\views.py`.
+
+   - In both functions, comment out the line containing the permission class.
+
+     Example:
+
+     ```python
+     # Comment out the following line in both functions
+     # permission_classes = [IsAuthenticated]
+     ```
+
+2. Open the file `settings.py`.
+
+   - Comment out the line containing `'rest_framework.authentication.TokenAuthentication',`.
+
+     Example:
+
+     ```python
+     # Comment out the following line
+     # 'rest_framework.authentication.TokenAuthentication',
+     ```
+
+Now you can run the tests using the following command:
+
+```bash
+python manage.py test
 
 ## Conclusion
 

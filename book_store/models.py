@@ -11,5 +11,5 @@ class BookStore(models.Model):
     quantity = models.IntegerField()
     
     def __str__(self) -> str:
-        return self.title + " | " + self.author + " | " + self.price + self.ISBN + " | " + str(self.price)
+        return self.title + " | " + self.author + " | " + str(self.price) + "|" + self.ISBN + " | " + str(self.price)
     
