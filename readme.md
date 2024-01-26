@@ -212,6 +212,7 @@ Now you can run the tests using the following command:
 
 ```bash
 python manage.py test
+```
 
 ## Conclusion
 
